@@ -25,4 +25,11 @@ class Products extends Controller
         parent::__construct();
         BackendMenu::setContext('WRvE.AnderShop', 'products');
     }
+
+    public function listInjectRowClass($product, $definition = null)
+    {
+        if (!$product->published_at || $product->published_at > now()) {
+            return 'disabled';
+        }
+    }
 }

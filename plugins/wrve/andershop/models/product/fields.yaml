@@ -10,6 +10,22 @@ fields:
         preset:
             field: name
             type: slug
+    _published:
+        label: Gepubliceerd
+        comment: Zichtbaar op website
+        type: switch
+        on: Ja
+        off: Nee
+        span: auto
+    published_at:
+        label: Gepubliceerd op
+        type: datepicker
+        default: now
+        span: auto
+        trigger:
+            field: _published
+            condition: checked
+            action: show
 
 tabs:
     fields:

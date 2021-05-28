@@ -1,8 +1,11 @@
 1.0.1: 'First version of AnderShop'
 1.0.2:
-    - 'Created table wrve_andershop_products'
+    - 'Create products and variants table'
     - v1.0.2/add_products.php
     - v1.0.2/add_product_variants.php
 1.0.3:
-    - 'Updated table wrve_andershop_products'
+    - 'Add description to products'
     - v1.0.3/add_description_to_products.php
+1.0.4:
+    - 'Add published to products'
+    - v1.0.4/add_published_to_products.php

@@ -4,6 +4,7 @@ title: Producten
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 recordsPerPage: 20
+filter: config_filter.yaml
 defaultSort:
     column: name
     direction: asc

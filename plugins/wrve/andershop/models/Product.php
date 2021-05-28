@@ -10,7 +10,7 @@ class Product extends Model
     use Validation;
     use SoftDelete;
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'published_at'];
 
     /**
      * @var string The database table used by the model.
@@ -29,4 +29,13 @@ class Product extends Model
     public $attachMany = ['images' => [File::class, 'public' => false]];
 
     public $hasMany = ['variants' => Variant::class];
+
+    public function filterFields($fields, $context)
+    {
+        if ($this->published_at) {
+            $fields->_published->value = true;
+        } else {
+            $fields->published_at->value = now();
+        }
+    }
 }

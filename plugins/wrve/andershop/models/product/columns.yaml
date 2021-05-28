@@ -3,6 +3,9 @@ columns:
         label: Naam
         type: text
         searchable: true
+    published_at:
+        label: Gepubliceerd
+        type: timetense
     variants_count:
         label: Aantal varianten
         relation: variants
