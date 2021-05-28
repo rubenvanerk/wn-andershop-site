@@ -1,11 +1,14 @@
-name: PHP Composer
+name: Deploy to staging environment
 
 on:
     push:
         branches: [ main ]
 
 jobs:
-    build:
+    deploy:
+        environment:
+            name: staging
+            url: anders.wrve.nl
         runs-on: ubuntu-latest
         steps:
             -   name: Deploy
