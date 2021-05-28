@@ -29,7 +29,10 @@ tabs:
             label: Afbeeldingen
             tab: Omschrijving
             type: fileupload
-        variants:
+        variants@update:
             tab: Varianten
             type: partial
             path: $/wrve/andershop/views/partials/relation.htm
+        variants@create:
+            tab: Varianten
+            type: hint
