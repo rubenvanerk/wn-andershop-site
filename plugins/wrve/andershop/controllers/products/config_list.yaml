@@ -4,6 +4,9 @@ title: Producten
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 recordsPerPage: 20
+defaultSort:
+    column: name
+    direction: asc
 toolbar:
     buttons: list_toolbar
     search:

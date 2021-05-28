@@ -10,3 +10,10 @@ fields:
         preset:
             field: name
             type: slug
+
+tabs:
+    fields:
+        variants:
+            tab: Varianten
+            type: partial
+            path: $/wrve/andershop/views/partials/relation.htm

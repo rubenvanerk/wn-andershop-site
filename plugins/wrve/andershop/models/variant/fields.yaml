@@ -3,3 +3,7 @@ fields:
         label: Naam
         span: auto
         type: text
+    images:
+        label: Afbeeldingen
+        span: full
+        type: fileupload

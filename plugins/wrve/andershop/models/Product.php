@@ -23,4 +23,6 @@ class Product extends Model
         'name' => ['required', 'max:191'],
         'slug' => ['required', 'max:191', 'unique:wrve_andershop_products', 'alpha_dash'],
     ];
+
+    public $hasMany = ['variants' => Variant::class];
 }

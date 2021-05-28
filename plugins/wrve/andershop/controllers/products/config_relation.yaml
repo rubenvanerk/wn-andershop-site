@@ -1,0 +1,11 @@
+variants:
+    label: Variant
+    manage:
+        form: $/wrve/andershop/models/variant/fields.yaml
+        list: $/wrve/andershop/models/variant/columns.yaml
+    view:
+        list: $/wrve/andershop/models/variant/columns.yaml
+        toolbarButtons: create|delete
+        defaultSort:
+            column: name
+            direction: asc

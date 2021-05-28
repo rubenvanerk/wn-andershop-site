@@ -1,6 +1,7 @@
 <?php namespace WRvE\AnderShop\Models;
 
 use Model;
+use System\Models\File;
 use Winter\Storm\Database\Traits\SoftDelete;
 use Winter\Storm\Database\Traits\Validation;
 
@@ -22,4 +23,8 @@ class Variant extends Model
     public $rules = [
         'name' => ['required', 'max:191'],
     ];
+
+    public $attachMany = ['images' => File::class];
+
+    public $belongsTo = ['product' => Product::class];
 }
