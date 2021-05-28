@@ -3,3 +3,7 @@ columns:
         label: Naam
         type: text
         searchable: true
+    variants_count:
+        label: Aantal varianten
+        relation: variants
+        useRelationCount: true
