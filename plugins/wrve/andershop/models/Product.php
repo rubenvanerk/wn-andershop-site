@@ -26,7 +26,7 @@ class Product extends Model
         'description' => ['nullable', 'max:65535'],
     ];
 
-    public $attachMany = ['images' => File::class];
+    public $attachMany = ['images' => [File::class, 'public' => false]];
 
     public $hasMany = ['variants' => Variant::class];
 }

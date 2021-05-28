@@ -24,7 +24,7 @@ class Variant extends Model
         'name' => ['required', 'max:191'],
     ];
 
-    public $attachMany = ['images' => File::class];
+    public $attachMany = ['images' => File::class, 'public' => false];
 
     public $belongsTo = ['product' => Product::class];
 }
