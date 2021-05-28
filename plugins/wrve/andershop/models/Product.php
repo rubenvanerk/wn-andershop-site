@@ -1,6 +1,7 @@
 <?php namespace WRvE\AnderShop\Models;
 
 use Model;
+use System\Models\File;
 use Winter\Storm\Database\Traits\SoftDelete;
 use Winter\Storm\Database\Traits\Validation;
 
@@ -22,7 +23,10 @@ class Product extends Model
     public $rules = [
         'name' => ['required', 'max:191'],
         'slug' => ['required', 'max:191', 'unique:wrve_andershop_products', 'alpha_dash'],
+        'description' => ['nullable', 'max:65535'],
     ];
+
+    public $attachMany = ['images' => File::class];
 
     public $hasMany = ['variants' => Variant::class];
 }

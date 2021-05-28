@@ -13,6 +13,15 @@ fields:
 
 tabs:
     fields:
+        description:
+            label: Omschrijving
+            tab: Omschrijving
+            type: richeditor
+            toolbarButtons: fullscreen|bold|italic|underline|striketrough|paragraphFormat|formatOL|formatUL|insertLink|insertTable|undo|redo
+        images:
+            label: Afbeeldingen
+            tab: Omschrijving
+            type: fileupload
         variants:
             tab: Varianten
             type: partial

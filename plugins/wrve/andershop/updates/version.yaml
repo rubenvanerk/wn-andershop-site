@@ -3,3 +3,6 @@
     - 'Created table wrve_andershop_products'
     - v1.0.2/add_products.php
     - v1.0.2/add_product_variants.php
+1.0.3:
+    - 'Updated table wrve_andershop_products'
+    - v1.0.3/add_description_to_products.php
