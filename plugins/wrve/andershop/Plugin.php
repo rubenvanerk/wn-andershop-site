@@ -4,6 +4,8 @@ use App;
 use Backend\Models\BrandSetting;
 use Event;
 use System\Classes\PluginBase;
+use WRvE\AnderShop\Models\Product;
+use WRvE\AnderShop\Models\Variant;
 
 class Plugin extends PluginBase
 {
@@ -20,5 +22,16 @@ class Plugin extends PluginBase
                 $controller->vars['app_name'] = BrandSetting::get('app_name');
             });
         });
+    }
+
+    public function registerSeeder()
+    {
+        factory(Product::class, 25)
+            ->create()
+            ->each(function ($product) {
+                foreach (factory(Variant::class, random_int(0, 3))->make() as $variant) {
+                    $product->variants()->add($variant);
+                }
+            });
     }
 }
