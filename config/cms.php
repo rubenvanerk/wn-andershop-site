@@ -314,20 +314,20 @@ return [
     'storage' => [
 
         'uploads' => [
-            'disk'            => 'local',
+            'disk'            => 's3',
             'folder'          => 'uploads',
             'path'            => '/storage/app/uploads',
             'temporaryUrlTTL' => 3600,
         ],
 
         'media' => [
-            'disk'   => 'local',
+            'disk'   => 's3',
             'folder' => 'media',
             'path'   => '/storage/app/media',
         ],
 
         'resized' => [
-            'disk'   => 'local',
+            'disk'   => 's3',
             'folder' => 'resized',
             'path'   => '/storage/app/resized',
         ],

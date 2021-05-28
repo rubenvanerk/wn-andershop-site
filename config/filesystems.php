@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 's3',
 
     /*
     |--------------------------------------------------------------------------
@@ -51,13 +51,10 @@ return [
 
         's3' => [
             'driver'      => 's3',
-            'key'         => '',
-            'secret'      => '',
-            'region'      => '',
-            'bucket'      => '',
-            // 'url'      => env('AWS_URL'),
-            // 'endpoint' => env('AWS_ENDPOINT'),
+            'key'         => env('S3_KEY'),
+            'secret'      => env('S3_SECRET'),
+            'region'      => env('S3_REGION', 'eu-central-1'),
+            'bucket'      => env('S3_BUCKET'),
         ],
     ],
-
 ];
