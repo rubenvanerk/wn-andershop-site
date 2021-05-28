@@ -28,7 +28,7 @@ class Products extends Controller
 
     public function listInjectRowClass($product, $definition = null)
     {
-        if (!$product->published_at || $product->published_at > now()) {
+        if (!$product->published) {
             return 'disabled';
         }
     }

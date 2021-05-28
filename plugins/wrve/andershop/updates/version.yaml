@@ -9,3 +9,6 @@
 1.0.4:
     - 'Add published to products'
     - v1.0.4/add_published_to_products.php
+1.0.5:
+    - 'Change published at to published'
+    - v1.0.5/change_published_at_to_published.php

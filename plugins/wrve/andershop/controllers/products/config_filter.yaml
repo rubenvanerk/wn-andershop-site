@@ -3,5 +3,5 @@ scopes:
         label: Gepubliceerd
         type: switch
         conditions:
-            - published_at IS NULL
-            - published_at IS NOT NULL
+            - published = 0
+            - published = 1

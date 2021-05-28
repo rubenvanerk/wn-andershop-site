@@ -10,6 +10,7 @@ $factory->define(Product::class, function (\OFFLINE\Seeder\Classes\Generator $fa
         'name' => ucfirst($name),
         'slug' => str_slug($name),
         'description' => $faker->text,
+        'published' => $faker->boolean(75),
     ];
 });
 
