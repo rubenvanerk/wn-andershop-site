@@ -1,0 +1,12 @@
+fields:
+    name:
+        label: Naam
+        span: auto
+        type: text
+    slug:
+        label: URL
+        span: auto
+        type: text
+        preset:
+            field: name
+            type: slug

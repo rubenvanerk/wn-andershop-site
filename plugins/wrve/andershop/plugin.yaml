@@ -1,6 +1,17 @@
 plugin:
     name: AnderShop
     description: ''
-    author: 'WRvE'
+    author: WRvE
     icon: oc-icon-shopping-cart
     homepage: ''
+permissions:
+    wrve.andershop.access_products:
+        tab: Andershop
+        label: 'Producten beheren'
+navigation:
+    products:
+        label: Inventaris
+        url: wrve/andershop/products
+        icon: icon-archive
+        permissions:
+            - wrve.andershop.access_products

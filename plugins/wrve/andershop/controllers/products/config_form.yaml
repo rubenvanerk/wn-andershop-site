@@ -1,0 +1,10 @@
+name: Product
+form: $/wrve/andershop/models/product/fields.yaml
+modelClass: WRvE\AnderShop\Models\Product
+defaultRedirect: wrve/andershop/products
+create:
+    redirect: 'wrve/andershop/products/update/:id'
+    redirectClose: wrve/andershop/products
+update:
+    redirect: wrve/andershop/products
+    redirectClose: wrve/andershop/products

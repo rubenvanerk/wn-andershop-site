@@ -1,0 +1,11 @@
+list: $/wrve/andershop/models/product/columns.yaml
+modelClass: WRvE\AnderShop\Models\Product
+title: Producten
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'wrve/andershop/products/update/:id'
