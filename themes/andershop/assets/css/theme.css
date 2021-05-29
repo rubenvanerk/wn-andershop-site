@@ -7,6 +7,16 @@ h1, h2, h3, h4, h5 {
     color: #cb063e;
 }
 
+a {
+    text-decoration: none;
+    color: #cb063e;
+}
+
+a:hover {
+    color: #cb063e;
+    text-decoration: underline;
+}
+
 .stripe-loading-indicator .stripe,
 .stripe-loading-indicator .stripe-loaded {
     background: #ffcd00 !important;
