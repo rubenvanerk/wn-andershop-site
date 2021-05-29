@@ -17,6 +17,9 @@ fields:
         on: Ja
         off: Nee
         span: auto
+    view_button:
+        type: partial
+        span: auto
 
 tabs:
     fields:

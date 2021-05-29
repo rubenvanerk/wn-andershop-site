@@ -10,3 +10,7 @@ columns:
         label: Aantal varianten
         relation: variants
         useRelationCount: true
+    view_button:
+        label: Bekijken
+        type: partial
+        cssClass: nolink

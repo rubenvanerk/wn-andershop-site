@@ -1,0 +1,21 @@
+
+
+{% if not product.published %}
+    <p>Let op: dit product is niet gepubliceerd en is niet zichtbaar voor normale gebruikers</p>
+{% endif %}
+
+<h1>{{ product.name|raw }}</h1>
+
+{% for image in product.images %}
+    <img src="{{ image.getThumb(100, 100) }}" alt="{{ image.title|raw }}">
+{% endfor %}
+
+{% for variant in product.variants %}
+
+    <h2>{{ variant.name|raw }}</h2>
+
+    {% for image in variant.images %}
+        <img src="{{ image.getThumb(100, 100) }}" alt="{{ image.title|raw }}">
+    {% endfor %}
+
+{% endfor %}

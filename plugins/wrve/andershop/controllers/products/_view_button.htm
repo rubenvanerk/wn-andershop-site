@@ -1,0 +1,6 @@
+<?php $product = $record ?? $formModel ?>
+
+<a href="<?= \Cms\Classes\Page::url('product', ['slug' => $product->slug]) ?>"
+   class="btn btn-primary wn-icon-eye <?= $record ? 'btn-sm' : '' ?>" target="_blank" style="color: white">
+    Bekijken
+</a>

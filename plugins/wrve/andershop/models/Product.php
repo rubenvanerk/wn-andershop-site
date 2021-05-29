@@ -1,7 +1,9 @@
 <?php namespace WRvE\AnderShop\Models;
 
+use BackendAuth;
 use Model;
 use System\Models\File;
+use Winter\Storm\Database\Builder;
 use Winter\Storm\Database\Traits\SoftDelete;
 use Winter\Storm\Database\Traits\Validation;
 
@@ -16,6 +18,17 @@ class Product extends Model
      * @var string The database table used by the model.
      */
     public $table = 'wrve_andershop_products';
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        if (!BackendAuth::check()) {
+            static::addGlobalScope('published', function (Builder $builder) {
+                $builder->where('published', true);
+            });
+        }
+    }
 
     /**
      * @var array Validation rules

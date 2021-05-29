@@ -5,6 +5,7 @@ use Backend\Models\BrandSetting;
 use Event;
 use System\Classes\PluginBase;
 use WRvE\AnderShop\Models\Product;
+use WRvE\AnderShop\Components\Product as ProductComponent;
 use WRvE\AnderShop\Models\Variant;
 
 class Plugin extends PluginBase
@@ -33,5 +34,12 @@ class Plugin extends PluginBase
                     $product->variants()->add($variant);
                 }
             });
+    }
+
+    public function registerComponents()
+    {
+        return [
+            ProductComponent::class => 'product',
+        ];
     }
 }
