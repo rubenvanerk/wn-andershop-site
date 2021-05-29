@@ -1,0 +1,16 @@
+html, body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: rgb(66, 66, 66);
+}
+
+h1, h2, h3, h4, h5 {
+    color: #cb063e;
+}
+
+.selected {
+    border-color: #cc003d;
+}
+
+img.placeholder {
+    opacity: 0.3;
+}

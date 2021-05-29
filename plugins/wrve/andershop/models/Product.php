@@ -39,7 +39,7 @@ class Product extends Model
         'description' => ['nullable', 'max:65535'],
     ];
 
-    public $attachMany = ['images' => [File::class, 'public' => false]];
+    public $attachMany = ['images' => [File::class]];
 
     public $hasMany = ['variants' => Variant::class];
 }

@@ -1,21 +1,32 @@
-
-
 {% if not product.published %}
-    <p>Let op: dit product is niet gepubliceerd en is niet zichtbaar voor normale gebruikers</p>
+    <div class="alert alert-primary" role="alert">
+        Let op: dit product is niet gepubliceerd en is niet zichtbaar voor normale gebruikers
+    </div>
 {% endif %}
 
-<h1>{{ product.name|raw }}</h1>
 
-{% for image in product.images %}
-    <img src="{{ image.getThumb(100, 100) }}" alt="{{ image.title|raw }}">
-{% endfor %}
+<div class="row">
+    <div class="col" id="product-images">
+        {% partial '@product-images' item=product %}
+    </div>
 
-{% for variant in product.variants %}
+    <div class="col">
+        <h1>{{ product.name|raw }}</h1>
+        {{ product.description|raw }}
 
-    <h2>{{ variant.name|raw }}</h2>
+        {% if product.variants|length > 0 %}
+            <form data-request="onSelectVariant">
+                <label for="variants">Varianten</label>
+                <select class="form-select" aria-label="Varianten opties" id="variants"
+                        onchange="$(this).closest('form').submit()"
+                        name="variant_id">
+                    <option></option>
+                    {% for variant in product.variants %}
+                        <option value="{{ variant.id }}">{{ variant.name|raw }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        {% endif %}
 
-    {% for image in variant.images %}
-        <img src="{{ image.getThumb(100, 100) }}" alt="{{ image.title|raw }}">
-    {% endfor %}
-
-{% endfor %}
+    </div>
+</div>

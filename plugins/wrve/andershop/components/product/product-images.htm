@@ -1,0 +1,22 @@
+{% set activeImage = activeImage ?: item.images|first %}
+
+<div class="row">
+    {% if activeImage %}
+        <img src="{{ activeImage.getThumb(500, 500) }}" alt="{{ activeImage.title|raw }}" class="img-fluid">
+    {% else %}
+        <img src="{{ 'assets/images/logo.svg'|theme }}" alt="Anders Logo" width="500" class="img-fluid placeholder">
+    {% endif %}
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        {% for image in item.images %}
+            <a class="text-decoration-none" href="#"
+               data-request="onSelectImage"
+               data-request-data="image_id: {{ image.id }}">
+                <img src="{{ image.getThumb(100, 100) }}" alt="{{ image.title|raw }}"
+                     class="img-thumbnail {{ image.id == activeImage.id ? 'selected' }}">
+            </a>
+        {% endfor %}
+    </div>
+</div>
