@@ -7,6 +7,11 @@ h1, h2, h3, h4, h5 {
     color: #cb063e;
 }
 
+.stripe-loading-indicator .stripe,
+.stripe-loading-indicator .stripe-loaded {
+    background: #ffcd00 !important;
+}
+
 .selected {
     border-color: #cc003d;
 }

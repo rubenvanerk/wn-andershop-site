@@ -17,7 +17,7 @@
         {% if product.variants|length > 0 %}
             <form data-request="onSelectVariant">
                 <label for="variants">Varianten</label>
-                <select class="form-select" aria-label="Varianten opties" id="variants"
+                <select class="form-select" aria-label="Varianten opties" id="variants" autocomplete="off"
                         onchange="$(this).closest('form').submit()"
                         name="variant_id">
                     <option></option>
