@@ -68,3 +68,8 @@ img.img-thumbnail {
     margin-top: auto;
     margin-bottom: auto;
 }
+
+.variant h2 {
+    overflow: hidden;
+    white-space: nowrap;
+}

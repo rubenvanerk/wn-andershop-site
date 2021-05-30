@@ -13,7 +13,7 @@
 
 <div class="row">
     {% for variant in product.variants %}
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 variant">
             <h2>{{ variant.name|raw }}</h2>
             <div id="product-images-{{ variant.id }}">
                 {% partial '@product-images' item=variant %}
