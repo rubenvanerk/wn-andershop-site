@@ -2,10 +2,16 @@
 
 <div class="row active-image">
     {% if activeImage %}
-        <img src="{{ activeImage.getThumb(500, 500, {'mode': 'crop', 'quality': 100}) }}" alt="{{ activeImage.title|raw }}" class="img-fluid product-image">
+        <img src="{{ activeImage.getThumb(500, 500, {'mode': 'crop', 'quality': 100}) }}"
+             alt="{{ activeImage.title|raw }}" class="img-fluid product-image">
     {% else %}
         <img src="{{ 'assets/images/logo.svg'|theme }}" alt="Anders Logo" width="500" class="img-fluid placeholder">
     {% endif %}
+    <div class="loading-indicator d-flex justify-content-center" id="loading-{{ item.id }}" style="display: none !important;">
+        <div class="spinner spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 </div>
 
 <div class="row mt-3">
@@ -13,7 +19,8 @@
         {% for image in item.images %}
             <a class="text-decoration-none" href="#"
                data-request="onSelectImage"
-               data-request-data="image_id: {{ image.id }}, variant_id: {{ item.id }}">
+               data-request-data="image_id: {{ image.id }}, variant_id: {{ item.id }}"
+               data-request-loading="#loading-{{ item.id }}">
                 <img src="{{ image.getThumb(100, 100, {'mode': 'crop', 'quality': 100}) }}" alt="{{ image.title|raw }}"
                      class="img-thumbnail {{ image.id == activeImage.id ? 'selected' }}">
             </a>
