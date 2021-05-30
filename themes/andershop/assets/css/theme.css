@@ -48,5 +48,5 @@ img.img-thumbnail {
 }
 
 .active-image img {
-    min-height: 500px;
+    height: 300px;
 }

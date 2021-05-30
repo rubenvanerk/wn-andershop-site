@@ -4,29 +4,20 @@
     </div>
 {% endif %}
 
-
 <div class="row">
-    <div class="col-md-6" id="product-images">
-        {% partial '@product-images' item=product %}
-    </div>
-
-    <div class="col-md-6">
+    <div class="col-md-12">
         <h1 class="mt-0">{{ product.name|raw }}</h1>
         {{ product.description|raw }}
-
-        {% if product.variants|length > 0 %}
-            <form data-request="onSelectVariant">
-                <label for="variants">Varianten</label>
-                <select class="form-select" aria-label="Varianten opties" id="variants" autocomplete="off"
-                        onchange="$(this).closest('form').submit()"
-                        name="variant_id">
-                    <option></option>
-                    {% for variant in product.variants %}
-                        <option value="{{ variant.id }}">{{ variant.name|raw }}</option>
-                    {% endfor %}
-                </select>
-            </form>
-        {% endif %}
-
     </div>
+</div>
+
+<div class="row">
+    {% for variant in product.variants %}
+        <div class="col-lg-4 col-md-6">
+            <h2>{{ variant.name|raw }}</h2>
+            <div id="product-images-{{ variant.id }}">
+                {% partial '@product-images' item=variant %}
+            </div>
+        </div>
+    {% endfor %}
 </div>

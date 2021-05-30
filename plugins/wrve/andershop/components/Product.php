@@ -38,8 +38,6 @@ class Product extends ComponentBase
 
     public function onRun()
     {
-        Session::forget('variant');
-
         $this->page['product'] = $this->getProduct();
 
         if (!$this->product) {
@@ -55,28 +53,18 @@ class Product extends ComponentBase
         $product = $this->getProduct();
         $activeImage = $product->images()->find(Input::get('image_id'));
         return [
-            '#product-images' => $this->renderPartial('@product-images', [
+            '#product-images-' . $product->id => $this->renderPartial('@product-images', [
                 'item' => $product,
                 'activeImage' => $activeImage,
             ]),
         ];
     }
 
-    public function onSelectVariant(): array
-    {
-        $this->getProduct();
-        $variant = $this->product->variants()->find(Input::get('variant_id'));
-        Session::put('variant', $variant ? $variant->id : null);
-        return [
-            '#product-images' => $this->renderPartial('@product-images', ['item' => $variant ?? $this->product]),
-        ];
-    }
-
     public function getProduct()
     {
         $this->product = ProductModel::where('slug', $this->property('slug'))->first();
-        if (Session::get('variant')) {
-            $this->variant = $this->product->variants()->find(Session::get('variant'));
+        if (Input::get('variant_id')) {
+            $this->variant = $this->product->variants()->find(Input::get('variant_id'));
         }
         return $this->variant ?? $this->product;
     }
