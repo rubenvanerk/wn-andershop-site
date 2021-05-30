@@ -18,7 +18,11 @@
             <div id="product-images-{{ variant.id }}">
                 {% partial '@product-images' item=variant %}
             </div>
-            <button class="btn btn-outline-primary mt-2" onclick="alert('Dit is nog niet klaar')">Aanvragen</button>
+            <button class="btn btn-outline-primary mt-2"
+                    {% if variant.stock == 0 %}disabled{% endif %}
+                    onclick="alert('Dit is nog niet klaar')">
+                Aanvragen
+            </button>
             <small class="text-muted d-block">{{ variant.stock }} beschikbaar</small>
         </div>
     {% endfor %}
