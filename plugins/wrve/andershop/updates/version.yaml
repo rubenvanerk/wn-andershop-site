@@ -12,3 +12,6 @@
 1.0.5:
     - 'Change published at to published'
     - v1.0.5/change_published_at_to_published.php
+1.0.6:
+    - 'Add stock to variants'
+    - v1.0.6/builder_table_update_wrve_andershop_product_variants.php

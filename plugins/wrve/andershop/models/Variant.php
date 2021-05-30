@@ -22,6 +22,7 @@ class Variant extends Model
      */
     public $rules = [
         'name' => ['required', 'max:191'],
+        'stock' => ['required', 'integer', 'min:0'],
     ];
 
     public $attachMany = ['images' => [File::class, 'public' => false]];

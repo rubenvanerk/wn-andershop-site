@@ -17,6 +17,22 @@ a:hover {
     text-decoration: underline;
 }
 
+.btn.btn-outline-primary {
+    border-radius: 0;
+    border-color: #cb063e;
+    color: #cb063e;
+}
+
+.btn.btn-outline-primary:hover {
+    background: none;
+    border-color: #ffce00;
+    color: #ffce00;
+}
+
+.btn.btn-outline-primary:focus {
+    box-shadow: none;
+}
+
 .stripe-loading-indicator .stripe,
 .stripe-loading-indicator .stripe-loaded {
     background: #ffcd00 !important;
@@ -45,6 +61,7 @@ img.img-thumbnail {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    border-radius: 0;
 }
 
 .active-image {

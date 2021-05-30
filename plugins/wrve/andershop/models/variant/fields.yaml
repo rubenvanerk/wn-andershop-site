@@ -3,6 +3,10 @@ fields:
         label: Naam
         span: auto
         type: text
+    stock:
+        label: Aantal beschikbaar
+        span: auto
+        type: number
     images:
         label: Afbeeldingen
         span: full

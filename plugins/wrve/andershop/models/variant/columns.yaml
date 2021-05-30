@@ -2,3 +2,5 @@ columns:
     name:
         label: Naam
         type: text
+    stock:
+        label: Aantal beschikbaar
