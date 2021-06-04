@@ -7023,12 +7023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rubenvanerk/wn-ajaxpopup-plugin.git",
-                "reference": "29c4e4f14e264a8b7c981d1001ad941fbc128958"
+                "reference": "e55c2bb13bdcadbc01d575df734edf683da2e8fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rubenvanerk/wn-ajaxpopup-plugin/zipball/29c4e4f14e264a8b7c981d1001ad941fbc128958",
-                "reference": "29c4e4f14e264a8b7c981d1001ad941fbc128958",
+                "url": "https://api.github.com/repos/rubenvanerk/wn-ajaxpopup-plugin/zipball/e55c2bb13bdcadbc01d575df734edf683da2e8fd",
+                "reference": "e55c2bb13bdcadbc01d575df734edf683da2e8fd",
                 "shasum": ""
             },
             "default-branch": true,
@@ -7047,7 +7047,7 @@
                 "issues": "https://github.com/rubenvanerk/wn-ajaxpopup-plugin/issues",
                 "source": "https://github.com/rubenvanerk/wn-ajaxpopup-plugin/tree/main"
             },
-            "time": "2021-06-04T12:50:23+00:00"
+            "time": "2021-06-04T13:35:47+00:00"
         }
     ],
     "packages-dev": [
