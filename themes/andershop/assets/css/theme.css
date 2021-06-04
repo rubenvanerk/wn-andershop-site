@@ -17,8 +17,11 @@ a:hover {
     text-decoration: underline;
 }
 
-.btn.btn-outline-primary {
+.btn {
     border-radius: 0;
+}
+
+.btn.btn-outline-primary {
     border-color: #cb063e;
     color: #cb063e;
 }

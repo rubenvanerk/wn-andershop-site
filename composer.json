@@ -38,7 +38,8 @@
         "wikimedia/composer-merge-plugin": "~2.0.1",
         "aws/aws-sdk-php": "~3.0",
         "league/flysystem-aws-s3-v3": "~1.0",
-        "offline/oc-seeder-plugin": "dev-master"
+        "offline/oc-seeder-plugin": "dev-master",
+        "wrve/wn-ajaxpopup-plugin": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4|^9.3.3",

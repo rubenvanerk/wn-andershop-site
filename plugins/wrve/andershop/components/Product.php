@@ -3,7 +3,7 @@
 use Cms\Classes\CodeBase;
 use Cms\Classes\ComponentBase;
 use Input;
-use Session;
+use WRvE\AjaxPopup\Components\AjaxPopup;
 use WRvE\AnderShop\Models\Product as ProductModel;
 use WRvE\AnderShop\Models\Variant;
 
@@ -36,8 +36,14 @@ class Product extends ComponentBase
         parent::__construct($cmsObject, $properties);
     }
 
+    public function init()
+    {
+        $this->addComponent(AjaxPopup::class, 'ajaxPopup', []);
+    }
+
     public function onRun()
     {
+
         $this->page['product'] = $this->getProduct();
 
         if (!$this->product) {
@@ -56,6 +62,16 @@ class Product extends ComponentBase
             '#product-images-' . $product->id => $this->renderPartial('@product-images', [
                 'item' => $product,
                 'activeImage' => $activeImage,
+            ]),
+        ];
+    }
+
+    public function onShowRequestForm(): array
+    {
+        $product = $this->getProduct();
+        return [
+            'requestForm' => $this->renderPartial('@request-form', [
+                'item' => $product,
             ]),
         ];
     }
