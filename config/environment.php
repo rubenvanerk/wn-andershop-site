@@ -29,6 +29,6 @@ return [
     'hosts' => [
         'localhost:8000' => 'dev',
         'anders.wrve.nl' => 'staging',
+        'andershop.nl' => 'production',
     ],
-
 ];

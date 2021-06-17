@@ -1,4 +1,4 @@
-name: Deploy to staging environment
+name: Deploy to production environment
 
 on:
     push:
@@ -7,8 +7,8 @@ on:
 jobs:
     deploy:
         environment:
-            name: staging
-            url: anders.wrve.nl
+            name: production
+            url: andershop.nl
         runs-on: ubuntu-latest
         steps:
             -   name: Deploy
