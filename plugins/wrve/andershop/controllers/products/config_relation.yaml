@@ -6,7 +6,7 @@ variants:
     view:
         list: $/wrve/andershop/models/variant/columns.yaml
         toolbarButtons: create|delete
-        perPage: 10
+        recordsPerPage: 10
         showSearch: true
         defaultSort:
             column: name
