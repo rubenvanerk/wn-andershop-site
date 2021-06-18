@@ -61,17 +61,17 @@ img.product-image {
 }
 
 img.img-thumbnail {
-    width: 100px;
-    height: 100px;
     object-fit: cover;
     border-radius: 0;
 }
 
-.active-image {
-    position: relative;
+.thumbnail-container {
+    width: 100px;
+    height: 100px;
 }
 
-.active-image img {
+.active-image {
+    position: relative;
     height: 300px;
 }
 
