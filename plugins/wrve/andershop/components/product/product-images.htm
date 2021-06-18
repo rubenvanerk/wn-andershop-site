@@ -2,7 +2,7 @@
 
 <div class="row active-image">
     {% if activeImage %}
-        <img src="{{ activeImage.getPath() }}"
+        <img src="{{ activeImage.focus(540, 300, 'auto') }}"
              width="540"
              height="300"
              alt="{{ activeImage.title|raw }}" class="img-fluid product-image">
@@ -23,7 +23,7 @@
                data-request="onSelectImage"
                data-request-data="image_id: {{ image.id }}, variant_id: {{ item.id }}"
                data-request-loading="#loading-{{ item.id }}">
-                <img src="{{ image.getPath() }}" alt="{{ image.title|raw }}"
+                <img src="{{ image.focus(100, 100, 'auto') }}" alt="{{ image.title|raw }}"
                      width="100"
                      height="100"
                      class="img-thumbnail {{ image.id == activeImage.id ? 'selected' }}">
