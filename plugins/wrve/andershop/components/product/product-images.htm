@@ -3,8 +3,8 @@
 <div class="row active-image">
     {% if activeImage %}
         <img src="{{ activeImage.getPath() }}"
-             width="500"
-             height="500"
+             width="540"
+             height="300"
              alt="{{ activeImage.title|raw }}" class="img-fluid product-image">
     {% else %}
         <img src="{{ 'assets/images/logo.svg'|theme }}" alt="Anders Logo" width="500" class="img-fluid placeholder">
