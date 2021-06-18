@@ -2,5 +2,6 @@ columns:
     name:
         label: Naam
         type: text
+        searchable: true
     stock:
         label: Aantal beschikbaar
