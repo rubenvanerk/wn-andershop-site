@@ -11,4 +11,3 @@ fields:
         label: Afbeeldingen
         span: full
         type: fileupload
-        focuspoint: true
