@@ -43,7 +43,6 @@ class Product extends ComponentBase
 
     public function onRun()
     {
-
         $this->page['product'] = $this->getProduct();
 
         if (!$this->product) {
@@ -78,7 +77,9 @@ class Product extends ComponentBase
 
     public function getProduct()
     {
-        $this->product = ProductModel::where('slug', $this->property('slug'))->first();
+        $this->product = ProductModel::where('slug', $this->property('slug'))
+            ->with('variants.images')
+            ->first();
         if (Input::get('variant_id')) {
             $this->variant = $this->product->variants()->find(Input::get('variant_id'));
         }
