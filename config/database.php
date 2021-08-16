@@ -59,6 +59,9 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'varcharmax' => 191,
+            'options' => [
+                PDO::ATTR_EMULATE_PREPARES => true
+            ]
         ],
     ],
 
