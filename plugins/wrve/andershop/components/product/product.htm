@@ -18,13 +18,12 @@
             <div id="product-images-{{ variant.id }}">
                 {% partial '@product-images' item=variant %}
             </div>
-{#            <button class="btn btn-outline-primary mt-2"#}
-{#                    {% if variant.stock == 0 %}disabled{% endif %}#}
-{#                    data-request="onShowRequestForm"#}
-{#                    data-request-data="variant_id: {{ variant.id }}"#}
-{#                    data-popup="requestForm">#}
-{#                Aanvragen#}
-{#            </button>#}
+            <button class="btn btn-outline-primary mt-2"
+                    data-request="onShowRequestForm"
+                    data-request-data="variant_id: {{ variant.id }}"
+                    data-popup="requestForm">
+                Aanvragen
+            </button>
             <small class="text-muted d-block">{{ variant.stock }} beschikbaar</small>
         </div>
     {% endfor %}

@@ -2,7 +2,12 @@
 
 use Cms\Classes\CodeBase;
 use Cms\Classes\ComponentBase;
+use Flash;
 use Input;
+use Mail;
+use Session;
+use ValidationException;
+use Validator;
 use WRvE\AjaxPopup\Components\AjaxPopup;
 use WRvE\AnderShop\Models\Product as ProductModel;
 use WRvE\AnderShop\Models\Variant;
@@ -71,8 +76,36 @@ class Product extends ComponentBase
         return [
             'requestForm' => $this->renderPartial('@request-form', [
                 'item' => $product,
+                'name' => Session::get('name'),
+                'email' => Session::get('email'),
             ]),
         ];
+    }
+
+    public function onRequest()
+    {
+        $rules = [
+            'name' => ['required'],
+            'email' => ['required', 'email'],
+            'amount' => ['required', 'min:1', 'integer'],
+        ];
+
+        $validator = Validator::make(post(), $rules);
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+
+
+        $data = $validator->validated();
+        $data['variant'] = Variant::findOrFail(post('variant_id'));
+
+        Session::put('name', $data['name']);
+        Session::put('email', $data['email']);
+
+        Mail::sendTo(['drechtsteden@stichtinganders.nl' => 'Stichting Anders Drechtsteden'], 'wrve.andershop::mail.request', $data);
+
+        Flash::success('We hebben je aanvraag succesvol ontvangen. We nemen zo spoedig mogelijk contact met je op.');
     }
 
     public function getProduct()

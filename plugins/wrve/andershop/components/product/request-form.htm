@@ -5,22 +5,28 @@
                 <h5 class="modal-title">{{ item.name }} aanvragen</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form>
+            <form data-request="onRequest" data-request-flash data-request-success="$(this).find('.close').click()">
                 <div class="modal-body">
                     <div class="mb-3">
+                        <label for="name" class="form-label">Naam</label>
+                        <input type="text" class="form-control" id="name" name="name" required value="{{ name }}">
+                    </div>
+
+                    <div class="mb-3">
                         <label for="email" class="form-label">E-mailadres</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" name="email" required value="{{ email }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="amount" class="form-label">Aantal</label>
-                        <input type="number" class="form-control" id="amount" aria-describedby="amountHelp" max="{{ item.stock }}">
+                        <input type="number" class="form-control" id="amount" aria-describedby="amountHelp" min="1" max="{{ item.stock }}" name="amount" required>
                         <div id="amountHelp" class="form-text">{{ item.stock }} beschikbaar</div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Sluiten</button>
-                    <button type="submit" class="btn btn-outline-primary" onclick="alert('Dit is nog niet klaar')">
+                    <input type="hidden" name="variant_id" value="{{ item.id }}">
+                    <button type="button" class="btn btn-outline-secondary close" data-bs-dismiss="modal">Sluiten</button>
+                    <button type="submit" class="btn btn-outline-primary" data-attach-loading>
                         Aanvragen
                     </button>
                 </div>

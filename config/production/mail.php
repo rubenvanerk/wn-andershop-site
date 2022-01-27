@@ -3,7 +3,7 @@
 return [
     'driver' => 'ses',
     'from' => [
-        'address' => 'contact@andershop.nl',
+        'address' => 'noreply@andershop.nl',
         'name'    => 'AnderShop',
     ],
 ];
