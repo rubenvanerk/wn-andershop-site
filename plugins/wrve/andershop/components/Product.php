@@ -78,6 +78,7 @@ class Product extends ComponentBase
                 'item' => $product,
                 'name' => Session::get('name'),
                 'email' => Session::get('email'),
+                'phone_number' => Session::get('phone_number'),
             ]),
         ];
     }
@@ -87,6 +88,7 @@ class Product extends ComponentBase
         $rules = [
             'name' => ['required'],
             'email' => ['required', 'email'],
+            'phone_number' => ['required'],
             'amount' => ['required', 'min:1', 'integer'],
         ];
 
@@ -96,12 +98,12 @@ class Product extends ComponentBase
             throw new ValidationException($validator);
         }
 
-
         $data = $validator->validated();
         $data['variant'] = Variant::findOrFail(post('variant_id'));
 
         Session::put('name', $data['name']);
         Session::put('email', $data['email']);
+        Session::put('phone_number', $data['phone_number']);
 
         Mail::sendTo(['drechtsteden@stichtinganders.nl' => 'Stichting Anders Drechtsteden'], 'wrve.andershop::mail.request', $data);
 
