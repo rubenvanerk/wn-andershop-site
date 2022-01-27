@@ -87,4 +87,9 @@ class Product extends ComponentBase
         }
         return $this->variant ?? $this->product;
     }
+
+    public function getVariants()
+    {
+        return $this->product->variants()->where('stock', '>', 0)->get();
+    }
 }
