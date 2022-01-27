@@ -4,6 +4,7 @@ use App;
 use Backend\Models\BrandSetting;
 use Event;
 use System\Classes\PluginBase;
+use Wrve\Andershop\Components\Products;
 use WRvE\AnderShop\Models\Product;
 use WRvE\AnderShop\Components\Product as ProductComponent;
 use WRvE\AnderShop\Models\Variant;
@@ -40,6 +41,7 @@ class Plugin extends PluginBase
     {
         return [
             ProductComponent::class => 'product',
+            Products::class => 'products',
         ];
     }
 }

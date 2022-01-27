@@ -1,8 +1,7 @@
-title = "Demonstration"
+title = "Home"
 url = "/"
 layout = "default"
+
+[products]
 ==
-function onStart() {
-    return Redirect::to('/backend');
-}
-==
+{% component '@products' %}

@@ -1,0 +1,7 @@
+<div class="list-group widt">
+    {% for product in __SELF__.getProducts() %}
+        <a href="{{ 'product'|page({'slug': product.slug}) }}" class="list-group-item list-group-item-action" aria-current="true">
+            {{ product.name }}
+        </a>
+    {% endfor %}
+</div>
