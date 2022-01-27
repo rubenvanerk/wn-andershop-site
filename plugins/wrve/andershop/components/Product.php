@@ -105,7 +105,14 @@ class Product extends ComponentBase
         Session::put('email', $data['email']);
         Session::put('phone_number', $data['phone_number']);
 
-        Mail::sendTo(['drechtsteden@stichtinganders.nl' => 'Stichting Anders Drechtsteden'], 'wrve.andershop::mail.request', $data);
+        Mail::sendTo(
+            ['drechtsteden@stichtinganders.nl' => 'Stichting Anders Drechtsteden'],
+            'wrve.andershop::mail.request',
+            $data,
+            function ($message) use ($data) {
+                $message->replyTo($data['email'], $data['name']);
+            }
+        );
 
         Flash::success('We hebben je aanvraag succesvol ontvangen. We nemen zo spoedig mogelijk contact met je op.');
     }
