@@ -97,5 +97,11 @@
             "type": "vcs",
             "url": "https://github.com/rubenvanerk/oc-seeder-plugin"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
 }
