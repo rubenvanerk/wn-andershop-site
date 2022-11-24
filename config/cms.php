@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'backendForceSecure' => false,
+    'backendForceSecure' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'backendTimezone' => 'UTC',
+    'backendTimezone' => 'Europe/Amsterdam',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'backendSkin' => \Backend\Skins\Standard::class,
+    'backendSkin' => \Winter\TailwindUI\Skins\TailwindUI::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'runMigrationsOnLogin' => null,
+    'runMigrationsOnLogin' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -135,7 +135,7 @@ return [
     |
     */
 
-    'disableCoreUpdates' => false,
+    'disableCoreUpdates' => true,
 
     /*
     |--------------------------------------------------------------------------

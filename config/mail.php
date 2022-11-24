@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('MAIL_MAILER', 'ses'),
+    'driver' => env('MAIL_MAILER', 'ses'),
 
     /*
     |--------------------------------------------------------------------------
@@ -88,6 +89,6 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'noreply@andershop.nl'),
-        'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Andershop')),
+        'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'AnderShop')),
     ],
 ];

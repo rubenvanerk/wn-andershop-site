@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'development',
+    'default' => 'dev',
 
     /*
     |--------------------------------------------------------------------------
@@ -27,6 +27,9 @@ return [
     */
 
     'hosts' => [
+        'localhost:8000' => 'dev',
         'localhost' => 'dev',
+        'anders.wrve.nl' => 'staging',
+        'andershop.nl' => 'production',
     ],
 ];
