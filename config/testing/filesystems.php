@@ -13,7 +13,20 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'local'),
+    'default' => 'local',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Cloud Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Many applications store files both locally and in the cloud. For this
+    | reason, you may specify a default "cloud" driver here. This driver
+    | will be bound as the Cloud disk implementation in the container.
+    |
+    */
+
+    'cloud' => 's3',
 
     /*
     |--------------------------------------------------------------------------
@@ -26,28 +39,26 @@ return [
     |
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
-    | NOTE: s3's stream_uploads option requires the Winter.DriverAWS plugin
-    | to be installed and enabled.
-    |
     */
 
     'disks' => [
+
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
-            'url' => '/storage/app',
-            'visibility' => 'public',
+            'root'   => base_path('storage/tests/app'),
+            'url'    => '/storage/tests/app',
         ],
+
         's3' => [
-            'bucket' => env('AWS_BUCKET'),
-            'driver' => 's3',
-            'endpoint' => env('AWS_ENDPOINT'),
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'stream_uploads' => env('AWS_S3_STREAM_UPLOADS', false),
-            'url' => env('AWS_URL'),
-            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+            'driver'      => 's3',
+            'key'         => '',
+            'secret'      => '',
+            'region'      => '',
+            'bucket'      => '',
+            // 'url'      => env('AWS_URL'),
+            // 'endpoint' => env('AWS_ENDPOINT'),
         ],
+
     ],
+
 ];

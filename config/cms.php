@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'backendForceSecure' => true,
+    'backendForceSecure' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'backendTimezone' => 'Europe/Amsterdam',
+    'backendTimezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'backendSkin' => 'Backend\Skins\Standard',
+    'backendSkin' => \Backend\Skins\Standard::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'runMigrationsOnLogin' => false,
+    'runMigrationsOnLogin' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +117,11 @@ return [
     |
     */
 
-    'loadModules' => ['System', 'Backend', 'Cms'],
+    'loadModules' => [
+        'System',
+        'Backend',
+        'Cms',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -131,7 +135,7 @@ return [
     |
     */
 
-    'disableCoreUpdates' => true,
+    'disableCoreUpdates' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -156,7 +160,7 @@ return [
     |
     */
 
-    'enableRoutesCache' => false,
+    'enableRoutesCache' => env('ROUTES_CACHE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -196,7 +200,7 @@ return [
     |
     */
 
-    'enableAssetCache' => true,
+    'enableAssetCache' => env('ASSET_CACHE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -250,7 +254,7 @@ return [
     |
     */
 
-    'databaseTemplates' => false,
+    'databaseTemplates' => env('DATABASE_TEMPLATES', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -312,26 +316,22 @@ return [
     */
 
     'storage' => [
-
         'uploads' => [
-            'disk'            => 'local',
-            'folder'          => 'uploads',
-            'path'            => '/storage/app/uploads',
+            'disk' => 'local',
+            'folder' => 'uploads',
+            'path' => '/storage/app/uploads',
             'temporaryUrlTTL' => 3600,
         ],
-
         'media' => [
-            'disk'   => 'local',
+            'disk' => 'local',
             'folder' => 'media',
-            'path'   => '/storage/app/media',
+            'path' => '/storage/app/media',
         ],
-
         'resized' => [
-            'disk'   => 'local',
+            'disk' => 'local',
             'folder' => 'resized',
-            'path'   => '/storage/app/resized',
+            'path' => '/storage/app/resized',
         ],
-
     ],
 
     /*
@@ -360,7 +360,7 @@ return [
     |
     */
 
-    'linkPolicy' => 'detect',
+    'linkPolicy' => env('LINK_POLICY', 'detect'),
 
     /*
     |--------------------------------------------------------------------------
@@ -371,7 +371,10 @@ return [
     |
     */
 
-    'defaultMask' => ['file' => null, 'folder' => null],
+    'defaultMask' => [
+        'file' => null,
+        'folder' => null,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -396,7 +399,7 @@ return [
     |
     */
 
-    'enableCsrfProtection' => true,
+    'enableCsrfProtection' => env('ENABLE_CSRF', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -443,7 +446,7 @@ return [
     |
     */
 
-    'restrictBaseDir' => true,
+    'restrictBaseDir' => env('RESTRICT_BASE_DIR', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -466,5 +469,4 @@ return [
     */
 
     'enableBackendServiceWorkers' => false,
-
 ];

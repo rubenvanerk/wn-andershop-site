@@ -90,6 +90,7 @@ class Product extends ComponentBase
             'email' => ['required', 'email'],
             'phone_number' => ['required'],
             'amount' => ['required', 'min:1', 'integer'],
+            'comment' => ['nullable'],
         ];
 
         $validator = Validator::make(post(), $rules);

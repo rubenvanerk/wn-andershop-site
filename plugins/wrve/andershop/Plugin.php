@@ -26,17 +26,6 @@ class Plugin extends PluginBase
         });
     }
 
-    public function registerSeeder()
-    {
-        factory(Product::class, 25)
-            ->create()
-            ->each(function ($product) {
-                foreach (factory(Variant::class, random_int(0, 3))->make() as $variant) {
-                    $product->variants()->add($variant);
-                }
-            });
-    }
-
     public function registerComponents()
     {
         return [
