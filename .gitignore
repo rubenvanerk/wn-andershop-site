@@ -1,6 +1,7 @@
 # Composer ignores
 /vendor
 composer.phar
+composer.lock
 
 # Framework ignores
 .env
@@ -24,14 +25,15 @@ nbproject
 .idea
 .vscode
 _ide_helper.php
+_ide_helper_models.php
 
 # Other ignores
 .DS_Store
 package-lock.json
 /node_modules
 
-_ide_helper.php
-_ide_helper_models.php
+public
+
 
 plugins/*
 !/plugins/wrve

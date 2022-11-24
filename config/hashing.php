@@ -22,15 +22,7 @@ return [
     | Bcrypt Options
     |--------------------------------------------------------------------------
     |
-
-        'rackspace' => [
-            'driver'    => 'rackspace',
-            'username'  => 'your-username',
-            'key'       => 'your-key',
-            'container' => 'your-container',
-            'endpoint'  => 'https://identity.api.rackspacecloud.com/v2.0/',
-            'region'    => 'IAD',
-        ],  | Here you may specify the configuration options that should be used when
+    | Here you may specify the configuration options that should be used when
     | passwords are hashed using the Bcrypt algorithm. This will allow you
     | to control the amount of time it takes to hash the given password.
     |
@@ -52,9 +44,8 @@ return [
     */
 
     'argon' => [
-        'memory'  => 1024,
-        'threads' => 2,
-        'time'    => 2,
+        'memory' => 65536,
+        'threads' => 1,
+        'time' => 4,
     ],
-
 ];

@@ -1,53 +1,3 @@
-## START OFFLINE.ResponsiveImages - webp-rewrite
-#  DO NOT REMOVE THESE LINES
-<IfModule mod_setenvif.c>
-    # Vary: Accept for all the requests to jpeg and png
-    SetEnvIf Request_URI "\.(jpe?g|png)$" REQUEST_image
-</IfModule>
-<ifModule mod_rewrite.c>
-    RewriteEngine On
-
-    # If the Browser supports WebP images, and the .webp file exists, use it.
-    RewriteCond %{HTTP_ACCEPT} image/webp
-    RewriteCond %{REQUEST_URI} ^/?storage/.*\.(jpe?g|png)
-    RewriteCond %{REQUEST_FILENAME}.webp -f
-    RewriteRule ^/?(.*)$ $1.webp [NC,T=image/webp,END]
-
-    # If the Browser supports WebP images, and the .webp file does not exist, generate it.
-    RewriteCond %{HTTP_ACCEPT} image/webp
-    RewriteCond %{REQUEST_URI} ^/?storage/.*\.(jpe?g|png)
-    RewriteCond %{REQUEST_FILENAME}\.webp !-f
-    RewriteRule ^/?(.*)$ plugins/offline/responsiveimages/webp.php?path=$1 [NC,END]
-</ifModule>
-<IfModule mod_headers.c>
-    Header append Vary Accept env=REQUEST_image
-</IfModule>
-<IfModule mod_mime.c>
-    AddType image/webp .webp
-</IfModule>
-## END OFFLINE.ResponsiveImages - webp-rewrite
-
-# BEGIN Expire headers
-<IfModule mod_expires.c>
-  # Turn on the module.
-  ExpiresActive on
-  # Set the default expiry times.
-  ExpiresDefault "access plus 2 days"
-  ExpiresByType image/jpg "access plus 1 month"
-  ExpiresByType image/svg+xml "access 1 month"
-  ExpiresByType image/gif "access plus 1 month"
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType text/javascript "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType application/x-shockwave-flash "access plus 1 month"
-  ExpiresByType image/ico "access plus 1 month"
-  ExpiresByType image/x-icon "access plus 1 month"
-  ExpiresByType text/html "access plus 600 seconds"
-</IfModule>
-# END Expire headers
-
 <IfModule mod_rewrite.c>
 
     <IfModule mod_negotiation.c>
@@ -57,20 +7,16 @@
     RewriteEngine On
 
     ##
-    ## Uncomment following lines to force HTTPS.
+    ## You may need to uncomment the following line for some hosting environments,
+    ## if you have installed to a subdirectory, enter the name here also.
     ##
-    RewriteCond %{REMOTE_ADDR} !127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}
-    RewriteCond %{REMOTE_ADDR} !::1
-    RewriteCond %{ENV:HTTPS} off
-    RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+    # RewriteBase /
 
     ##
-    ## Redirect to non-www
+    ## Uncomment following lines to force HTTPS.
     ##
-    RewriteCond %{REMOTE_ADDR} !127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}
-    RewriteCond %{REMOTE_ADDR} !::1
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+    # RewriteCond %{HTTPS} off
+    # RewriteRule (.*) https://%{SERVER_NAME}/$1 [L,R=301]
 
     ##
     ## Paths explicitly blocked from being handled by the server
