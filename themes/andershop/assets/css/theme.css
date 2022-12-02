@@ -54,10 +54,15 @@ img.placeholder {
     opacity: 0.3;
 }
 
+.active-image a {
+    max-width: 540px;
+    max-height: 300px;
+}
+
 img.product-image {
-    max-width: 700px;
-    max-height: 500px;
-    object-fit: cover;
+    max-width: 540px;
+    max-height: 300px;
+    object-fit: contain;
 }
 
 img.img-thumbnail {

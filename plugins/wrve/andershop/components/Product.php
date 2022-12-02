@@ -135,4 +135,9 @@ class Product extends ComponentBase
     {
         return $this->product->variants()->where('stock', '>', 0)->get();
     }
+
+    public function onShowImage()
+    {
+        Flash::info(123);
+    }
 }

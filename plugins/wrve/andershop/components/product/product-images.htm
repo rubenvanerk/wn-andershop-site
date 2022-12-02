@@ -2,10 +2,12 @@
 
 <div class="row active-image">
     {% if activeImage %}
-        <img src="{{ activeImage.getPath()|resize(540, 300, {'mode': 'crop'}) }}"
-             width="540"
-             height="300"
-             alt="{{ activeImage.title|raw }}" class="img-fluid product-image">
+        <a href="{{ activeImage.getPath() }}">
+            <img src="{{ activeImage.getPath()|resize(540, 300, {'mode': 'fit'}) }}"
+                 width="540"
+                 height="300"
+                 alt="{{ activeImage.title|raw }}" class="product-image">
+        </a>
     {% else %}
         <img src="{{ 'assets/images/logo.svg'|theme }}" alt="Anders Logo" width="500" class="img-fluid placeholder">
     {% endif %}
