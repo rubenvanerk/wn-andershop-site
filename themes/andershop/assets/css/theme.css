@@ -55,13 +55,14 @@ img.placeholder {
 }
 
 .active-image a {
+    display: block;
     max-width: 540px;
     max-height: 300px;
 }
 
 img.product-image {
-    max-width: 540px;
-    max-height: 300px;
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
 }
 
