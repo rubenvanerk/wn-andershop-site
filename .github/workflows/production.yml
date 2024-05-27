@@ -23,13 +23,12 @@ jobs:
                     envs: SHA
                     script: |
                         cd public_html/
-                        php artisan down --env=staging
+                        php artisan down --env=production
                         git fetch --all
                         git checkout --force $SHA
                         composer install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader
-                        php artisan cache:clear --env=staging
-                        php artisan config:cache --env=staging
-                        php artisan winter:up --env=staging
-                        php artisan up --env=staging
+                        php artisan cache:clear --env=production
+                        php artisan config:cache --env=production
+                        php artisan winter:up --env=production
+                        php artisan up --env=production
                         composer clear-cache
-
