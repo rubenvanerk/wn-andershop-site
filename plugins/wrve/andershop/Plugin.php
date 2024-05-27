@@ -3,12 +3,9 @@
 use App;
 use Backend\Models\BrandSetting;
 use Event;
-use Mockery\Exception;
 use System\Classes\PluginBase;
 use Wrve\Andershop\Components\Products;
-use WRvE\AnderShop\Models\Product;
 use WRvE\AnderShop\Components\Product as ProductComponent;
-use WRvE\AnderShop\Models\Variant;
 
 class Plugin extends PluginBase
 {
@@ -19,8 +16,6 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        throw new Exception('Sentry test');
-
         App::before(function () {
             // Share the variables with the CMS template system
             Event::listen('cms.page.beforeDisplay', function ($controller, $url, $page) {
