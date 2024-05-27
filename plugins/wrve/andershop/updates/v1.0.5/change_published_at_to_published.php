@@ -9,7 +9,7 @@ class BuilderTableUpdateWrveAndershopProductsPublishedAtToPublished extends Migr
     public function up()
     {
         Schema::table('wrve_andershop_products', function (Blueprint $table) {
-            $table->boolean('published')->default(0);
+            $table->boolean('published')->default(false);
             $table->dropColumn('published_at');
         });
     }

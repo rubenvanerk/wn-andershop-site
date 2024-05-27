@@ -6,11 +6,11 @@
         "winter/wn-backend-module": "dev-develop",
         "winter/wn-cms-module": "dev-develop",
         "laravel/framework": "^9.1",
-        "wikimedia/composer-merge-plugin": "~2.0.1",
+        "wikimedia/composer-merge-plugin": "~2.1.0",
         "aws/aws-sdk-php": "~3.0",
         "league/flysystem-aws-s3-v3": "~3.0",
         "wrve/wn-ajaxpopup-plugin": "dev-main",
-        "offline/responsiveimages-plugin": "^2.3",
+        "offline/oc-responsiveimages-plugin": "^2.3",
         "winter/wn-tailwindui-plugin": "dev-main"
     },
     "require-dev": {
