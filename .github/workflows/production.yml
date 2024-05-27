@@ -28,7 +28,7 @@ jobs:
                         git checkout --force $SHA
                         composer install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader
                         php artisan cache:clear --env=production
-                        php artisan config:cache --env=production
+                        php artisan config:clear --env=production
                         php artisan winter:up --env=production
                         php artisan up --env=production
                         composer clear-cache
