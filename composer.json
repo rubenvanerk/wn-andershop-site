@@ -11,7 +11,8 @@
         "league/flysystem-aws-s3-v3": "~3.0",
         "wrve/wn-ajaxpopup-plugin": "dev-main",
         "offline/oc-responsiveimages-plugin": "^2.3",
-        "winter/wn-tailwindui-plugin": "dev-main"
+        "winter/wn-tailwindui-plugin": "dev-main",
+        "winter/wn-sentry-plugin": "^2.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.8",
@@ -57,7 +58,8 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "wikimedia/composer-merge-plugin": true
+            "wikimedia/composer-merge-plugin": true,
+            "php-http/discovery": true
         }
     }
 }
